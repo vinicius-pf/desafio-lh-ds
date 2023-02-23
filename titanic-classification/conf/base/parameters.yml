@@ -1,3 +1,5 @@
 features: ["Survived", "Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked"]
 
 categorical_features: ['Sex', 'Embarked']
+
+test_features: ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked"]

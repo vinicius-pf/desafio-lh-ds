@@ -18,3 +18,7 @@ X:
 classification_model:
     type: pickle.PickleDataSet
     filepath: data\06_models\classification_model.pkl
+
+prediction_dataset:
+    type: pandas.CSVDataSet
+    filepath: data\07_model_output\prediction_dataset.csv
