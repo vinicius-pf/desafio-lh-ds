@@ -1,0 +1,3 @@
+features: ["Survived", "Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked"]
+
+categorical_features: ['Sex', 'Embarked']
