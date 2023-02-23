@@ -10,3 +10,7 @@ training_dataset:
 test_dataset:
     type: pandas.CSVDataSet
     filepath: data\01_raw\test.csv
+
+X:
+    type: pandas.CSVDataSet
+    filepath: data\05_model_input\X.csv
