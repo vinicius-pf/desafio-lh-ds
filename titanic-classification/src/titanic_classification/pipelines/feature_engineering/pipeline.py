@@ -26,7 +26,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         ),
         node(
             func = create_dummies,
-            inputs=['df_with_new_columns','params:categorical_features'],
+            inputs=['df_with_average_age','params:categorical_features'],
             outputs='X'
         ),     
     ])

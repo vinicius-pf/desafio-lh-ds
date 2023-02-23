@@ -14,3 +14,7 @@ test_dataset:
 X:
     type: pandas.CSVDataSet
     filepath: data\05_model_input\X.csv
+
+classification_model:
+    type: pickle.PickleDataSet
+    filepath: data\06_models\classification_model.pkl
