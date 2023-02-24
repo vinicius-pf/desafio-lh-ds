@@ -9,7 +9,7 @@
 
 - Após isso, caso ainda não tenha feito, é necessário criar um [ambiente virtual(venv)](https://docs.python.org/3/library/venv.html), utilizando `python3 -m venv ./venv`.
 
-- Após isso, é necessário ativar a venv com `venv/Scripts/activate` no Windows. Caso estejas utiliando Linux, o comando é `source venv/Scripts/activate`. Caso o ambiente foi ativado com sucesso, irá aparecer uma flag `(venv)` ao lado do caminho do diretório no terminal. Para desativar, basta rodar `deactivate`.
+- Sempre que abrir o projeto, é necessário ativar a venv com `venv/Scripts/activate` no Windows. Caso estejas utiliando Linux, o comando é `source venv/Scripts/activate`. Quando o ambiente for ativado com sucesso, irá aparecer uma flag `(venv)` ao lado do caminho do diretório no terminal. Para desativar, basta rodar `deactivate`.
 
 - Por último, instalar as bibliotecas necessárias utilizando pip, via `pip install -r > requirements.txt`. Para conferir as biliotecas instaladas, use `pip list`.
   
@@ -19,6 +19,12 @@ Os dados brutos estão disponíveis na pasta `titanic-classification/data/01_raw
 
 ## Rodando o projeto
 
-O projeto foi desenvolvido em Kedro, então para rodar o sistema é necessário efetuar o comando `kedro run`
+Esse projeto foi desenvolvido usando o framework Kedro. Durante o desenvolvimento dele foram criadas 3 pipelines, uma para a etapa de feature engineering, uma para a etapa de treinamento do modelo e a última para gerar as previsões do modelo.
 
-## Deploy local
+É possível rodar todas as pipelines utilizando o comando `kedro run`. Ao rodar o projeto completo, serão gerados o dataset de *input* do modelo na pasta `titanic-classification\data\05_model_input`, o modelo de machine learning em um arquivo pickle na pasta `titanic-classification\data\06_models`, e as previsões do modelo para os passageiros do arquivo de teste na pasta `titanic-classification\data\07_model_output`.
+
+Também é possível rodar cada pipeline de maneira individual. A pipeline de feature engineering gera o dataset de *input* do modelo de machine learning. O comando para rodar a pipeline é `kedro run --pipeline feature_engineering`.
+
+Para criar e treinar o modelo de ML, é necessário o comando `kedro run --pipeline model_training `.
+
+Por último, é possível rodar apena a pipeline que gera as previsões dos dados de teste utilizando o comando `kedro run --pipeline  model_prediction`.
